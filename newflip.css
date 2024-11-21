@@ -224,6 +224,17 @@ body {
     display: none;
   }
 
+  .arrows-container {
+    display: none;
+  }
+
+  .buttons-container {
+    display: none;
+  }
+  .go-back-button {
+    display: none;
+  }
+
   .mobile-message {
     display: flex !important;
     justify-content: center;
