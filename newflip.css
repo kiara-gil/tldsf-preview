@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+/* General Body Styling */
+body {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #201E1E;
+  color: rgba(255, 255, 255, 0.85);
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/* Flipbook Container */
+.flipbook-container {
+  top: -10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  position: relative;
+}
+
+#flipbook {
+  margin: 0 auto;
+  max-width: 1200px;
+  max-height: 600px;
+  overflow: hidden;
+}
+.page img {
+  width: 100%;
+  height: auto; /* Maintain image aspect ratio */
+}
+
+/* Message container */
+#message {
+  position: fixed;
+  top: 89%;
+  right: 5%;
+  transform: translateY(-50%);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  display: none;
+  z-index: 100;
+}
+
+.message-link {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* Go Back Home Button Styling */
+.go-back-button {
+  position: fixed;
+  top: 20px;
+  /* Adjust top position */
+  left: 20px;
+  /* Adjust left position */
+  display: flex;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.85);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.go-back-button .arrow {
+  margin-right: 8px;
+  /* Space between arrow and text */
+  display: flex;
+  align-items: center;
+}
+
+.go-back-button a {
+  text-decoration: none;
+  /* Remove underline */
+  color: inherit;
+  /* Inherit the color from the button */
+}
+
+.go-back-button a:hover {
+  text-decoration: none;
+  /* Remove underline on hover */
+  color: inherit;
+  /* Keep the color unchanged on hover */
+}
+
+/* Focus effect (optional) */
+.go-back-button:focus {
+  outline: none;
+  border: none;
+}
+
+/* Arrows Container Styling */
+.arrows-container {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  z-index: 10;
+  align-items: center;
+  /* Ensure the arrows are vertically centered */
+  justify-content: center;
+  /* Center the arrows horizontally */
+}
+
+/* Arrow Styling */
+.arrow {
+  font-size: 18px;
+  width: 50px;
+  height: 50px;
+  color: rgba(255, 255, 255);
+  background-color: rgba(209, 78, 26, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.arrow:hover {
+  background-color: rgba(209, 78, 26, 0.8);
+}
+
+/* Buttons Container Styling */
+.buttons-container {
+  position: fixed;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 100;
+}
+
+/* Back to Start Button Styling */
+.back-button {
+  font-family: 'Montserrat', sans-serif;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 11px 22px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none;
+  background-color: rgba(209, 78, 26, 0.5);
+}
+
+.back-button:hover {
+  background-color: rgba(209, 78, 26, 0.8);
+}
+
+/* Jump to Page Styling */
+.jump-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.jump-input {
+  font-family: 'Montserrat', sans-serif;
+  padding: 11px 22px;
+  font-size: 14px;
+  width: 51px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.jump-button {
+  font-family: 'Montserrat', sans-serif;
+  padding: 11px 22px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgba(209, 78, 26, 0.5);
+}
+
+.jump-button:hover {
+  background-color: rgba(209, 78, 26, 0.8);
+}
+
+#jump-to-page {
+  border: none;
+}
+
+#jump-to-page:focus {
+  border-color: rgba(209, 78, 26, 0.8);
+  outline: none;
+}
+
+/* Hide the spinner arrows for the number input */
+#jump-to-page::-webkit-outer-spin-button,
+#jump-to-page::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#jump-to-page[type=number] {
+  appearance: textfield;
+}
+
+/* Default state for larger screens */
+.mobile-message {
+  display: none;
+}
+
+/* Hide the flipbook container for small screens */
+@media (max-width: 768px) {
+  .flipbook-container {
+    display: none;
+  }
+
+  .mobile-message {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 18px;
+    height: 85vh;
+    max-width: 85%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+}

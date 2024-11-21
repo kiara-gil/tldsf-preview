@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rectangle Flipbook</title>
+  <link rel="stylesheet" href="newflip.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="turn.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Back Home Button -->
+  <button id="go-back-home" class="go-back-button">
+    <span class="arrow"><a href="/index.html">←</a></span>
+  </button>
+
+  <!-- Mobile Messafe -->
+  <div class="mobile-message">
+    The book cannot be viewed on mobile. It does not look good.
+    </br>
+    </br>Trust me. I barely want you seeing this on a computer screen!
+  </div>
+
+  <!-- Flipbook -->
+  <div class="flipbook-container">
+    <div id="flipbook" class="flipbook"></div>
+  </div>
+
+  <!-- Back to Start / Jump To  -->
+  <div class="buttons-container">
+    <!-- Back to Start Button -->
+    <button id="back-start" class="back-button">Back to Start</button>
+
+    <!-- Jump to Page Button and Input -->
+    <div class="jump-container" style="display:none;">
+      <input id="jump-to-page" class="jump-input" type="number" min="1" max="76" placeholder="page #">
+      <button id="jump-button" class="jump-button">Jump</button>
+    </div>
+  </div>
+
+  <!-- Arrow Navigation -->
+  <div class="arrows-container">
+    <div id="prev-page" class="arrow">&#8592;</div> <!-- Left Arrow -->
+    <div id="next-page" class="arrow">&#8594;</div> <!-- Right Arrow -->
+  </div>
+  <div id="message" style="display:none;">
+    Want a copy? Inquire <a href="/form.html" class="message-link">here</a>.
+  </div>
+
+  <script src="newflip.js"></script>
+</body>
+
+</html>
