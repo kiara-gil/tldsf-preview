@@ -256,10 +256,11 @@ body {
   }
 }
 
-@media screen and (orientation: landscape) {
+@media screen and (max-width: 768px) and (orientation: landscape) {
   .flipbook-container {
-    top: 0px;
+    top: 0px; /* Adjust top value only on mobile in landscape mode */
   }
+  
   .mobile-message {
     display: none !important;
   }
