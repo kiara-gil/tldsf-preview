@@ -209,6 +209,10 @@ body {
 
 /* Hide the flipbook container for small screens */
 @media (max-width: 768px) {
+  body {
+    overflow: hidden; /* Disable both horizontal and vertical scrolling */
+  }
+
   .flipbook-container {
     display: none;
   }
@@ -224,25 +228,17 @@ body {
     display: none;
   }
 
-  .mobile-message {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Montserrat', sans-serif;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 18px;
-    height: 85vh;
-    max-width: 85%;
-    overflow-x: hidden;
-    overflow-y: hidden;
-  }
 }
 
 /* Mobile - Landscape Mode: Only Allow Book in Landscape */
 @media screen and (orientation: portrait) {
   .flipbook-container {
     display: none; /* Hide book in portrait mode */
+  }
+
+  html,body {
+    overflow-x: hidden;
+    overflow-y: hidden; /* Disable both horizontal and vertical scrolling */
   }
 
   .mobile-message {
@@ -255,11 +251,22 @@ body {
     font-size: 20px;
     height: 85vh;
     max-width: 85%;
+    overflow-x: hidden;
+    overflow-y: hidden;
   }
 }
 
 @media screen and (orientation: landscape) {
+  .flipbook-container {
+    top: 0px;
+  }
   .mobile-message {
     display: none !important;
   }
+
+  html,body {
+    overflow-x: hidden;
+    overflow-y: hidden; /* Disable both horizontal and vertical scrolling */
+  }
+  
 }
