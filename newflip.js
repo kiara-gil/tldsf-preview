@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var totalPages = 76; // Total number of pages in the flipbook
+  var totalPages = 32; // Total number of pages in the flipbook
   var pagePrefix = "pages/tldsf ("; // Folder and naming prefix for images
   var pageExtension = ").jpg"; // File extension for images
 
