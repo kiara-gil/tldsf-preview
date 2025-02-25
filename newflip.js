@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var totalPages = 32; // Total number of pages in the flipbook
+  var totalPages = 76; // Total number of pages in the flipbook
   var pagePrefix = "pages/tldsf ("; // Folder and naming prefix for images
   var pageExtension = ").jpg"; // File extension for images
 
@@ -59,7 +59,24 @@ $(document).ready(function () {
   $(window).on("resize", function () {
     var newSize = calculateFlipbookSize();
     flipbook.turn("size", newSize.width, newSize.height);
+    checkOrientation();  // Recheck the orientation on resize
   });
+
+  // Show or hide the flipbook based on orientation
+  function checkOrientation() {
+    if (window.innerWidth > window.innerHeight) {
+      // In landscape mode, show the flipbook and hide the message
+      $(".flipbook-container").show();
+      $(".mobile-message").hide();
+    } else {
+      // In portrait mode, hide the flipbook and show the message
+      $(".flipbook-container").hide();
+      $(".mobile-message").show();
+    }
+  }
+
+  // Initial check on page load
+  checkOrientation();
 
   // Arrow navigation
   $("#next-page").on("click", function () {
